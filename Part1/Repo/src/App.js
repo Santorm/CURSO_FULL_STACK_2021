@@ -20,7 +20,7 @@ const App = () => {
     },
   ];
 
-  const { totalSum, numberExercises } = (() => {
+  const { totalExercises, countParts } = (() => {
     let sum = 0;
     let countExercises = 0;
     const key = "exercises";
@@ -30,14 +30,14 @@ const App = () => {
         sum += part[key];
       }
     });
-    return { totalSum: sum, numberExercises: countExercises };
+    return { totalExercises: sum, countParts: countExercises };
   })();
 
   return (
     <div>
       <Header course={course} />
       <Content parts={parts} />
-      <Total total={totalSum} numberExercises={numberExercises} />
+      <Total totalExercises={totalExercises} countParts={countParts} />
     </div>
   );
 };
