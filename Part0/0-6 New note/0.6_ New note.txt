@@ -1,0 +1,19 @@
+title 0.6: New note
+
+note over browser:
+User go to https://studies.cs.helsinki.fi/exampleapp/spa
+in the browser
+end note
+
+browser->server: HTTPS POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+
+note over browser:
+browser return JSON data from server using AJAX
+end note
+
+server-->browser: [{ content: "new note", date: "2021-03-13" }, ...]
+
+note over browser:
+browser render the page with new json information 
+end note

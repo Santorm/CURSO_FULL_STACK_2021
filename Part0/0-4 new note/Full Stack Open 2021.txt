@@ -1,0 +1,30 @@
+title Full Stack Open 2021
+
+
+note over browser:
+START ADD NEW NOTE PROCESS
+User fill the input field
+and click send action
+end note
+
+browser->server: HTTPS POST https://studies.cs.helsinki.fi/exampleapp/new_note
+
+server-->browser:URL redirect (HTTP 302) /exampleapp/notes
+browser-->server:HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server-->browser: main.css
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server-->browser: main.js
+
+note over browser:
+browser return JSON data from server 
+end note
+
+browser->server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+server-->browser: [{ content: "new note", date: "2021-03-13" }, ...]
+
+note over browser:
+browser render the page with new json information 
+end note
